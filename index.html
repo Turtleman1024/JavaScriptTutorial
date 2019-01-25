@@ -25,24 +25,114 @@
         //Data Type 
         //Number 
         var numberOne = 35;
-        //alert(numberOne);
+        console.log(numberOne);
         var numberTwo = 40;
-        //alert(numberOne + numberTwo);
+        console.log(numberOne + numberTwo);
         
         //Data Type
         //String
         var numberOneString = "35";
-        var NumberTwoString = "40";
+        var numberTwoString = "40";
         var favoriteNumber  = "62";
         //This will just concat the strings
-        //alert(numberOneString + numberTwoString);
-        //alert("My favorite number is " + favoriteNumber);
+        console.log(numberOneString + numberTwoString);
+        console.log("My favorite number is " + favoriteNumber);
 
         //Name conventions for variables
         //letters, numbers, underscores, dollar signs
         //variable name are case senitive
 
-        //Stopped at 15:50
+        //Arrays
+        var colorsArray = ['red', 'blue', 'green'];
+        var colors      = new Array('yellow', 'purple', 'orange')
+        //How to access arrays
+        //Just display the content
+        console.log(colorsArray);
+        console.log(colors[1]);
+
+        //Access a specified element in an array
+        //Access the array just like any other language
+        console.log(colorsArray[2]);
+        console.log(colors[2]);
+
+        //If you specify an out of range element JS will display undefined    
+        console.log(colorsArray[3]);
+        console.log(colors[3]);
+
+        //Adding a value to an array
+        colorsArray[3] = 'purple';
+        console.log(colorsArray);
+
+        //The above method works put it not very efficient
+        //You should use the push method this is know as dot reference
+        colorsArray.push('yellow');
+        console.log(colorsArray);
+
+        //Arrays can be treated like tuples
+        var numbers = [5, 77, 6,, 1,'Seven', 99];
+        console.log(numbers.length);
+        console.log(numbers.sort());
+        //console.log(numbers.reverse());
+
+        //Loops
+        //For Loops
+        for(var index = 0; index <= 10; index++)
+        {
+            console.log('For Index = ' + index);
+        }
+
+
+        //While Loop
+        var index2 = 0;
+        while(index2 <= 10)
+        {
+            console.log('While Index = ' +index2);
+            index2++;
+        }
+
+        //Foreach loops
+        numbers.forEach(function(number) 
+        {
+            console.log(number);
+        });
+
+        //Conditionals
+        //They are the same as any other language
+        if(1 == 1 && 2 == 2)
+        {
+            console.log('Values are equal')
+        }
+
+        //Three = signs checks if they are the same data types.
+        if( 1 === '1' || 2 === '2')
+        {
+            console.log('Datatypes are the same');
+        }
+        else
+        {
+            console.log('Datatypes are not the same');
+        }
+
+        //Switch
+        var fruit = 'apple';
+
+        switch(fruit)
+        {
+            case "banana":
+                console.log('I hate bananas');
+                break;
+            case "apple":
+                console.log('If the apple is green I love them');
+                break;
+            case "orange":
+                console.log('Oranges are ok');
+                break;
+            default:
+                console.log('Other fruits are blah');
+                break;
+        }
+
+        //Stopped at 39:24
 
 
     </script>
