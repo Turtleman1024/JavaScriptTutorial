@@ -132,7 +132,77 @@
                 break;
         }
 
-        //Stopped at 39:24
+        //Objects
+        //Object Literal
+        var person = 
+        {
+            firstName: "Turtleman",
+            lastName: "1024",
+            age: 512,
+            //Array
+            childern: ['MuffinMan1024', 'Camas256'],
+
+            //Embedded object
+            address: {
+                street: '123 Sesame Street',
+                city: 'New Your',
+                state: 'NY'
+            },
+
+            fullName: function()
+            {
+                return "Full Name: " + this.firstName + " " + this.lastName;
+            },
+
+            fullAddress: function()
+            {
+                return "Full Address: " + this.address.street + " " + this.address.city + ", " + this.address.state;
+            }
+        }
+
+        console.log(person.firstName);
+        console.log(person.lastName);
+        console.log(person.age);
+        
+        person.childern.forEach(function(child) 
+        {
+            console.log(child);
+        });
+
+        console.log(person.fullName());
+        console.log(person.fullAddress());
+        //End of Object Literal
+
+        //Object Constructor
+        var apple = new Object();
+        apple.color = 'green';
+        apple.shape = 'round';
+        apple.describe = function ()
+        {
+            return 'My favorite apple color is ' + this.color + ' and is ' + this.shape;
+        }
+
+        //console.log(apple);
+        console.log(apple.describe());
+
+        //Constructor Pattern
+        function Fruit(name, color, shape)
+        {
+            this.name = name;
+            this.color = color;
+            this.shape = shape;
+
+            this.describe = function()
+            {
+                return 'This is a ' + this.name + ' it is ' + this.color + " and has the " + this.shape + " shape.";
+            }
+        }
+
+        var banana = new Fruit('Banana', 'Yellow', 'Cresent');
+        console.log(banana.describe());
+
+        //Array of objects
+        //Stopped at 49:40
 
 
     </script>
