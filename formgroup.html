@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Learning JavaScript</title>
+        <link rel="stylesheet" href="style.css" />
+        <!--How to link an external JS file-->
+        <!--<script src="main.js"></script>-->        
+    </head>
+<body id="body">
+    <div class="header">
+        <h1 id="header1">Learning JavaScript</h1>
+        <p>With Turtleman1024</p>
+        <p id="displayTime"></p>
+        <p>The Tutorial that I used was this <a href="https://www.youtube.com/watch?v=vEROU2XtPR8&t=355s"target="blank">tutorial.</a></p>
+    </div>
+    <form method="post" action="index.html" name="myForm" onsubmit="return validateForm()">
+        <div>
+            <label>First Name</label>
+            <input type="text" name="firstName" id="firstName" />
+        </div>
+        <br />
+        <div>
+            <label>Last Name</label>
+            <input type="text" name="lastName" id="lastName" />              
+        </div>
+        <br />
+        <div>
+            <label>Background</label>
+            <select name="background" id="background" onchange="changeBackGround(this)">
+                <option value="white">White</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+            </select>
+        </div>
+        <br />
+        <input type="submit" value="Submit" />           
+    </form>
+    
+    <script>
+        //Form Validation
+        function validateForm()
+        {
+            var firstName = document.forms["myForm"]["firstName"].value;
+            if(firstName == null || firstName == "")
+            {
+                alert("First name is required");
+                return false;
+            }
+
+            if(firstName.length < 3)
+            {
+                alert("First name most be at least 3 characters");
+                return false;
+            }
+
+            var lastName = document.forms["myForm"]["lastName"].value;
+            if(lastName == null || lastName == "")
+            {
+                alert("Last name is required");
+                return false;
+            }
+
+            if(lastName.length < 3)
+            {
+                alert("Last name most be at least 3 characters");
+                return false;
+            }
+
+        }
+
+        function changeBackGround(newColor)
+        {
+            console.log(newColor.value);
+            var body = document.getElementById('body');
+            body.style.backgroundColor = newColor.value;
+            if(newColor.value != "white")
+            {            
+                var header = document.getElementById('header1');
+                header.style.color = newColor.value;
+            }
+        }
+
+
+    </script>
+</body>
+</html>
+
+
