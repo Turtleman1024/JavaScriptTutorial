@@ -10,23 +10,73 @@
     <!--<script src="main.js"></script>-->
 
 </head>
-<body>
+<body onload="showTime()">
     <div class="header">
-        <h1>Learning JavaScript</h1>
+        <h1 id="header1">Learning JavaScript</h1>
         <p>With Turtleman1024</p>
-        <p>The Tutorial that I used was this <a href="https://www.youtube.com/watch?v=vEROU2XtPR8&t=355s" target="blank">tutorial.</a> </p>
+        <p id="displayTime"></p>
+        <p>The Tutorial that I used was this <a href="https://www.youtube.com/watch?v=vEROU2XtPR8&t=355s" target="blank">tutorial.</a></p>
     </div>
 
     <div class="container">
-
+        <button onClick="doClick()">Click Me</button>
     </div>
 
-    <div style="clear:both;">
-        <h4 class="alignleft">Header one</h4>
-        <h4 class="alignright">Header two</h4>            
+    <div class="container">
+        <button onClick="changeText(this)">Click to change me</button>
     </div>
 
+    <div class="container">
+        <button onClick="changeHeader()">Click to change header</button>
+    </div>
+
+    <div class="container">
+        <button onClick="showDate()" onmouseover="mouseOverChange(this)" onmouseout="mouseOutChange(this)">Click to show date</button>
+        <h1 id="time"></h1>
+    </div>
+    
     <script>
+        //Events
+        function doClick()
+        {
+            console.log('Button Clicked');
+        }
+
+        function changeText(id)
+        {
+            id.innerHTML = 'You Clicked!';
+        }
+
+        function changeHeader()
+        {
+            var newHeader= document.getElementById('header1')
+            newHeader.innerHTML = 'You Changed The Header With A Click Button';
+        }
+
+        function showDate()
+        {
+            var time = document.getElementById('time');
+            time.innerHTML =  new Date();
+        }
+
+        function mouseOverChange(id)
+        {
+            id.innerHTML = "I said click me!";
+        }
+        
+        function mouseOutChange(id)
+        {
+            id.innerHTML = "Click to show date";
+        }
+
+        function showTime()
+        {
+            var today = new Date();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            var currentTime = document.getElementById('displayTime');
+            currentTime.innerHTML = time;
+        }
+        
         //Data Type 
         //Number 
         var numberOne = 35;
@@ -228,10 +278,8 @@
             console.log(user);
         });
 
-        //Events
-        //Stopped at 51:00
-
-
+        //Forms
+        //Stopped at 59:04
     </script>
 </body>
 </html>
